@@ -3,6 +3,7 @@ import {
   Flex,
   Image,
   Input,
+  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -12,26 +13,28 @@ import {
   ModalOverlay,
   Text,
   useDisclosure,
-  Link,
 } from '@chakra-ui/react';
 import { useState } from 'react';
+import ReactLoading from 'react-loading';
+import Footer from '../components/Footer';
 import { Error } from '../helpers/toast';
 import namedict from '../namedict.json';
 import power from '../power.json';
-import ReactLoading from 'react-loading';
-import Footer from '../components/Footer';
 
 function Home() {
   const [name, setName] = useState('');
   const [userPower, setUserPower] = useState([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setisLoading] = useState(false);
+  const [constantName, setConstantName] = useState('');
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  // handling perubahan input, kita simpan di state name
   function handleChange(e) {
     setName(e.target.value);
   }
 
+  // validasi apakah huruf
   function isLetter(str) {
     let check = true;
     for (const c of str) {
@@ -45,6 +48,7 @@ function Home() {
     return check;
   }
 
+  // handling saat submit
   function handleSubmit() {
     if (!name) {
       return Error('nama tidak boleh kosong 😉');
@@ -54,10 +58,12 @@ function Home() {
       return Error('masa iya nama begitu sih 😉');
     }
 
-    // untuk memastikan semua huruf menjadi kecil dan bisa dikalkulasi
+    // untuk memastikan semua huruf menjadi kecil dan bisa dikalkulasi sesuai namedict.json
     setName(name.toLowerCase());
 
     let totalCount = 0;
+
+    // penjumlahan point setiap huruf pada string
     for (const character of name) {
       namedict.map(item => {
         if (character === item.huruf) {
@@ -65,11 +71,15 @@ function Home() {
         }
       });
     }
+
     setisLoading(true);
     setTimeout(() => {
       setisLoading(false);
     }, 500);
     setIsSubmitted(true);
+    setConstantName(name.toLowerCase());
+
+    // set index dari power
     setUserPower(power[totalCount % power.length]);
   }
 
@@ -91,20 +101,22 @@ function Home() {
           <Text color={'#000'} fontSize={'30px'} textAlign={'center'}>
             masukkan nama lengkapmu :
           </Text>
-          <Flex marginTop={'20px'}>
+          <Flex marginTop={'20px'} flexDirection={['column', 'row']}>
             <Input
               backgroundColor={'gray.100'}
               border={'none'}
               borderY={'2px solid black'}
               borderX={'2px solid black'}
-              placeholder={'masukkan nama lengkap...'}
+              placeholder={'nama lengkap...'}
               color={'#000'}
               onChange={handleChange}
+              value={name}
             />
             <Button
               backgroundColor={'blue'}
               colorScheme={'blue'}
-              marginX={'10px'}
+              marginX={['0px', '10px']}
+              marginY={['10px', '0px']}
               onClick={handleSubmit}
               border={'2px solid black'}
             >
@@ -134,42 +146,43 @@ function Home() {
               />
             </Flex>
           ) : isSubmitted ? (
-            <Flex marginTop={'20px'}>
-              <Flex
-                shadow={'xl'}
-                padding={'20px'}
-                border={'2px solid black'}
-                borderRadius={'10px'}
-                flexDirection={'column'}
-                w={'300px'}
+            <Flex
+              shadow={'xl'}
+              padding={'20px'}
+              border={'2px solid black'}
+              borderRadius={'10px'}
+              flexDirection={'column'}
+              w={'300px'}
+              marginTop={'20px'}
+            >
+              <Image
+                src={`${userPower.gambar}`}
+                w={'100%'}
+                h={'200px'}
+                objectFit={'contain'}
+              />
+              <Text
+                color={'#fff'}
+                fontSize={'20px'}
+                fontWeight={'bold'}
+                marginY={'10px'}
+                textAlign={'center'}
               >
-                <Image
-                  src={`${userPower.gambar}`}
-                  w={'100%'}
-                  h={'200px'}
-                  objectFit={'contain'}
-                />
-                <Text
-                  color={'#000'}
-                  fontSize={'20px'}
-                  fontWeight={'bold'}
-                  marginY={'10px'}
-                  textAlign={'center'}
-                >
-                  {userPower.nama}
+                {userPower.nama}
+              </Text>
+              <Flex
+                backgroundColor={'gray.500'}
+                padding={'20px'}
+                borderRadius={'10px'}
+                border={'2px solid black'}
+              >
+                <Text>
+                  {constantName}, {userPower.deskripsi}
                 </Text>
-                <Flex
-                  backgroundColor={'gray.500'}
-                  padding={'20px'}
-                  borderRadius={'10px'}
-                  border={'2px solid black'}
-                >
-                  <Text>{userPower.deskripsi}</Text>
-                </Flex>
               </Flex>
             </Flex>
           ) : (
-            <Text color={'#000'} fontSize={'20px'}>
+            <Text color={'#000'} fontSize={'20px'} textAlign={'center'}>
               yuk isikan nama lengkap kamu, kemudian tekan "submit" 😉
             </Text>
           )}
