@@ -1,0 +1,32 @@
+[
+  {
+    "nama": "fire",
+    "deskripsi": "kamu memiliki kekuatan api yang membara. api melambangkan sebuah kekuatan dan keberanian dalam menghadapi apapun. namamu memiliki simbol keberanian. gunakan kekuatan ini untuk kebaikan, seperti menghangatkan orang sekitar dengan senyuman dan keramah tamahan yang kamu miliki.",
+    "gambar": "/assets/fire.png"
+  },
+  {
+    "nama": "water",
+    "deskripsi": "kamu memiliki kekuatan air. air menyimbolkan ketenangan dan kedamaian. sifatmu yang penuh ketenangan dapat membuat suasana sekitar menjadi penuh kebahagiaan. gunakan kekuatanmu untuk perihal yang baik seperti untuk melerai sebuah pertikaian dan kebaikan lainnya.",
+    "gambar": "/assets/water.png"
+  },
+  {
+    "nama": "ice",
+    "deskripsi": "kamu memiliki kekuatan es. kekuatan es melambangkan kedinginan. kedinginan akan memiliki kesan tidak peduli walaupun kamu sebenarnya sangat memedulikan dan menyayangi orang-orang disekitarmu. kekuatanmu juga dapat membuat orang takjub kepadamu. mereka menaruh rasa hormat yang tinggi kepadamu karena ketenangan, kebijakan, dan wibawamu yang dapat dirasakan orang lain.",
+    "gambar": "/assets/ice.png"
+  },
+  {
+    "nama": "stone",
+    "deskripsi": "kamu memiliki kekuatan batu. seperti yang kamu pikirkan, ya batu menyimbolkan bahwa kamu orang yang tangguh dan sekeras batu. kamu adalah orang yang sangat kuat dan tidak mudah menyerah. kamu memiliki sifat yang bijak dan selalu ingin menjadi pribadi yang lebih baik setiap saat. gunakan kekuatanmu ini untuk selalu bersikap lemah lembut kepada orang lain walaupun kamu adalah orang yang begitu tangguh dan kuat.",
+    "gambar": "/assets/stone.png"
+  },
+  {
+    "nama": "thunder",
+    "deskripsi": "kamu memiliki kekuatan petir. petir merupakan kekuatan yang unik. kekuatan ini melambangkan ketegasan dalam mengambil langkah-langkah cerdas dalam mencapai sesuatu. kamu memiliki sikap yang cekatan dan selalu menjadi kebanggan orang sekitar karena kehadiranmu begitu menginspirasi orang lain. sama seperti petir, kamu begitu berkilau dan dapat membuat orang lain terpukau oleh kehadiranmu. gunakan kekuatanmu untuk mempengaruhi orang lain secara baik dan benar. kamu berpotensi menjadi pemimpin yang hebat.",
+    "gambar": "/assets/thunder.png"
+  },
+  {
+    "nama": "wind",
+    "deskripsi": "kamu memiliki kekuatan angin. angin melambangkan kebijaksanaan dan juga ketenangan. angin melambangkan keseimbangan. angin melambangkan kebebasan. ya kamu adalah orang yang memiliki daya pikir yang cerdas dan kreatif. gunakan kekuatanmu untuk menuangkan ide-ide dan gagasan yang cemerlang dari sebuah karya atau apapun itu.",
+    "gambar": "/assets/wind.png"
+  }
+]
