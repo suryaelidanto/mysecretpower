@@ -162,7 +162,7 @@ function Home() {
                 objectFit={'contain'}
               />
               <Text
-                color={'#fff'}
+                color={'#000'}
                 fontSize={'20px'}
                 fontWeight={'bold'}
                 marginY={'10px'}
@@ -176,7 +176,7 @@ function Home() {
                 borderRadius={'10px'}
                 border={'2px solid black'}
               >
-                <Text>
+                <Text color={'#fff'}>
                   {constantName}, {userPower.deskripsi}
                 </Text>
               </Flex>
