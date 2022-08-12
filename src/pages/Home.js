@@ -12,7 +12,7 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
-  useDisclosure
+  useDisclosure,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import ReactLoading from 'react-loading';
@@ -285,7 +285,7 @@ function Home() {
               </Link>
             </Flex>
             <Text marginTop={'20px'}>Support Developer : </Text>
-            <Link href={'https://trakteer.id/suryaelidanto'}>
+            <Link href={'https://trakteer.id/suryaelidanto'} target={'_blank'}>
               <Image
                 src={'/assets/trakteer.png'}
                 marginTop={'20px'}
