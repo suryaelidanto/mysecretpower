@@ -111,6 +111,9 @@ function Home() {
               color={'#000'}
               onChange={handleChange}
               value={name}
+              onKeyDown={e => {
+                if (e.key === 'Enter') handleSubmit();
+              }}
             />
             <Button
               backgroundColor={'blue'}
