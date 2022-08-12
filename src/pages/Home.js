@@ -12,7 +12,7 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
-  useDisclosure,
+  useDisclosure
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import ReactLoading from 'react-loading';
@@ -58,13 +58,11 @@ function Home() {
       return Error('masa iya nama begitu sih 😉');
     }
 
-    // untuk memastikan semua huruf menjadi kecil dan bisa dikalkulasi sesuai namedict.json
-    setName(name.toLowerCase());
-
+    // init totalcount
     let totalCount = 0;
 
     // penjumlahan point setiap huruf pada string
-    for (const character of name) {
+    for (const character of name.toLowerCase()) {
       namedict.map(item => {
         if (character === item.huruf) {
           totalCount += item.point;
