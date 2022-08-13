@@ -41,6 +41,9 @@ function Home() {
       if (c === ' ') {
         continue;
       }
+      if (c === "'") {
+        continue;
+      }
       if (c.toLowerCase() === c.toUpperCase()) {
         check = false;
       }
