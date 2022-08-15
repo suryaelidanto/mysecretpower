@@ -194,6 +194,14 @@ function Home() {
         <Button variant={'outline'} colorScheme={'blue'} onClick={onOpen}>
           credits
         </Button>
+        <Link
+          href="https://sessionamateur.com/uue5ay8nsi?key=d750ee4bc49340051daeca8be1767580"
+          target="_blank"
+        >
+          <Button variant={'outline'} colorScheme="purple" marginTop={'20px'}>
+            I Need Money, Please Click This, Thank You :D
+          </Button>
+        </Link>
         <Footer />
       </Flex>
       <Modal isOpen={isOpen} onClose={onClose}>
